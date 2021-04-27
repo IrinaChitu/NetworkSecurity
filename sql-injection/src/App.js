@@ -13,8 +13,7 @@ import './App.css';
 const INITIAL_STATE = {
   username: '',
   password: '',
-  message: '',
-  authorized: false, 
+  authorized: false
 };
 
 class App extends Component {
@@ -23,6 +22,7 @@ class App extends Component {
 
     this.state = { ...INITIAL_STATE };
   }
+
   onSubmit = async (event) => {
     event.preventDefault();
 
@@ -35,15 +35,17 @@ class App extends Component {
     };
     fetch('api/auth', requestOptions)
       .then((response) => response.json())
-      .then((data) =>
-        this.setState({ message: data.message, authorized: data.authorized })
-      );
+      .then((data) => {
+        if (data.authorized === true) {
+          console.log(data.message);
+        } else {
+          console.error(data.message);
+        }
 
-    console.log(username);
-    console.log(password);
-   
-
-    // if authorized == true then redirect
+        this.setState({
+          authorized: data.authorized
+        });
+      });
   };
 
   onChange = (event) => {
@@ -51,42 +53,41 @@ class App extends Component {
   };
 
   render() {
-    // const { username, password, error } = this.state;
-    console.log(this.state.message);
-    console.log(this.state.authorized);
+    const { authorized } = this.state;
+
     return (
-      <Container className='App'>
-        <h2>Log in</h2>
-        <Form className='form' onSubmit={this.onSubmit}>
-          <Col>
-            <FormGroup>
-              <Label>Username</Label>
-              <Input
-                type='email'
-                name='username'
-                id='exampleEmail'
-                placeholder='username@email.com'
-                // value={username}
-                onChange={this.onChange}
-              />
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for='examplePassword'>Password</Label>
-              <Input
-                type='password'
-                name='password'
-                id='examplePassword'
-                placeholder='********'
-                // value={password}
-                onChange={this.onChange}
-              />
-            </FormGroup>
-          </Col>
-          <Button>Submit</Button>
-        </Form>
-      </Container>
+      authorized === false ?
+        <Container className='App'>
+          < h2 > Log in</h2 >
+          <Form className='form' onSubmit={this.onSubmit}>
+            <Col>
+              <FormGroup>
+                <Label>Username</Label>
+                <Input
+                  type='email'
+                  name='username'
+                  id='exampleEmail'
+                  placeholder='username@email.com'
+                  onChange={this.onChange}
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label for='examplePassword'>Password</Label>
+                <Input
+                  type='password'
+                  name='password'
+                  id='examplePassword'
+                  placeholder='********'
+                  onChange={this.onChange}
+                />
+              </FormGroup>
+            </Col>
+            <Button>Submit</Button>
+          </Form>
+        </Container >
+        : <Label>SQL injection attack successful!</Label>
     );
   }
 }
