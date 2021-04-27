@@ -14,6 +14,7 @@ const INITIAL_STATE = {
   username: '',
   password: '',
   message: '',
+  authorized: false, 
 };
 
 class App extends Component {
@@ -22,7 +23,6 @@ class App extends Component {
 
     this.state = { ...INITIAL_STATE };
   }
-
   onSubmit = async (event) => {
     event.preventDefault();
 
@@ -33,15 +33,15 @@ class App extends Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: username, password: password }),
     };
-    fetch('http://localhost:8081/api/auth', requestOptions)
+    fetch('api/auth', requestOptions)
       .then((response) => response.json())
       .then((data) =>
-        this.setState({ message: data.message, authorised: data.authorised })
+        this.setState({ message: data.message, authorized: data.authorized })
       );
 
     console.log(username);
     console.log(password);
-    // console.log(error);
+   
 
     // if authorized == true then redirect
   };
@@ -52,7 +52,8 @@ class App extends Component {
 
   render() {
     // const { username, password, error } = this.state;
-
+    console.log(this.state.message);
+    console.log(this.state.authorized);
     return (
       <Container className='App'>
         <h2>Log in</h2>
