@@ -1,4 +1,15 @@
-# NetworkSecurity
+# NetworkSecurity - SQL Injection Lab
 
-$ npm install --save reactstrap react react-dom
-$ npm install bootstrap --save
+## Steps
+
+cd sql-injection
+
+$ npm install
+
+$ npm start
+
+run VulnerableAPIApplication java class from /vulnerableAPI 
+
+
+Try logging in.
+Good luck!
