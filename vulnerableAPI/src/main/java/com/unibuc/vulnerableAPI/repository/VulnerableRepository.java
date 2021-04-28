@@ -1,6 +1,6 @@
-package com.unibuc.examenAWJ.repository;
+package com.unibuc.vulnerableAPI.repository;
 
-import com.unibuc.examenAWJ.model.User;
+import com.unibuc.vulnerableAPI.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;

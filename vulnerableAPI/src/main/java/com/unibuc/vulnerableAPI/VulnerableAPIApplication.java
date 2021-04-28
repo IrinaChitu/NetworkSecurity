@@ -1,4 +1,4 @@
-package com.unibuc.examenAWJ;
+package com.unibuc.vulnerableAPI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

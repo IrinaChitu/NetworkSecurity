@@ -1,4 +1,4 @@
-package com.unibuc.examenAWJ.model;
+package com.unibuc.vulnerableAPI.model;
 
 import lombok.*;
 

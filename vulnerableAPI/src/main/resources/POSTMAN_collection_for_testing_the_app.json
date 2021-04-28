@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "f7270838-3d3a-417b-a762-43b567300812",
-		"name": "ExamenW",
+		"name": "vulnerableAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

@@ -1,4 +1,4 @@
-package com.unibuc.examenAWJ.dto;
+package com.unibuc.vulnerableAPI.dto;
 
 import lombok.*;
 

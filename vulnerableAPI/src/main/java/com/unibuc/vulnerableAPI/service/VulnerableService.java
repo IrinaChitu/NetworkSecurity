@@ -1,9 +1,8 @@
-package com.unibuc.examenAWJ.service;
+package com.unibuc.vulnerableAPI.service;
 
-import com.unibuc.examenAWJ.dto.AuthRequest;
-import com.unibuc.examenAWJ.dto.AuthResponse;
-import com.unibuc.examenAWJ.model.User;
-import com.unibuc.examenAWJ.repository.VulnerableRepository;
+import com.unibuc.vulnerableAPI.dto.AuthResponse;
+import com.unibuc.vulnerableAPI.model.User;
+import com.unibuc.vulnerableAPI.repository.VulnerableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

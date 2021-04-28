@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.unibuc</groupId>
-	<artifactId>examenAWJ</artifactId>
+	<artifactId>vulnerableAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>examenAWJ</name>
-	<description>Examen aplicatii web folosind java</description>
+	<name>vulnerableAPI</name>
+	<description>sql injection vulnerable api</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

@@ -6,4 +6,4 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (username, password, money) VALUES
-('secretUser', 'verySecretPassword', 1000000);
+('secretUser@gmail.com', 'verySecretPassword', 1000000);
